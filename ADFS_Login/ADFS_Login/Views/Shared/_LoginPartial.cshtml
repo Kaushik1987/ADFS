@@ -1,0 +1,14 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <text>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-text">
+                Hello, @User.Identity.Name!
+            </li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a href="https://adfs.clarionad.clariontech.com/adfs/ls/?wa=wsignout1.0"> Logout </a></li>
+            }
+        </ul>
+    </text>
+}

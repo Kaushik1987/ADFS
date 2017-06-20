@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Validate Claim";
+}
+
+<h2>Validate Claim</h2>
+
+@if (ViewBag.isValidClaim != null)
+{
+    @ViewBag.isValidClaim
+    <br />
+    @ViewBag.Result
+}
+@using (Html.BeginForm("ValidateClaim", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="claimname" class="col-sm-2 control-label">Claim Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="claimname" name="claimname" placeholder="Claim key">
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="claimvalue" class="col-sm-2 control-label">Claim Value</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="claimvalue" name="claimvalue" placeholder="Claim value">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Validate Claim</button>
+        </div>
+    </div>
+}
+
+
